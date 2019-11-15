@@ -1,0 +1,19 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha 'test/**/*.test.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "got": "^9.6.0",
+    "mocha": "^6.2.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
