@@ -11,7 +11,7 @@ describe(`test case`, () => {
         console.log(`conf1: ${conf1}`);
         const server = new Server(conf1);
         await server.start();
-        const serverInstanceId = (await got(`http://localhost:${conf1.SERVER_PORT}/api/counts`)).body;
+        const serverInstanceId = JSON.parse((await got(`http://localhost:${conf1.SERVER_PORT}/api/counts`)).body);
         await server.stop();
 
         strictEqual(serverInstanceId, conf1.id)
@@ -24,7 +24,7 @@ describe(`test case`, () => {
         const server = new Server(conf2);
         await server.start();
 
-        const serverInstanceId = (await got(`http://localhost:${conf2.SERVER_PORT}/api/counts`)).body;
+        const serverInstanceId = JSON.parse((await got(`http://localhost:${conf2.SERVER_PORT}/api/counts`)).body);
         await server.stop();
 
         strictEqual(serverInstanceId, conf2.id)
